@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to AuroraConn!</title>
+    <style>
+        /* Basic reset for email clients */
+        body {
+            margin: 0;
+            padding: 0;
+            min-width: 100%;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table {
+            border-spacing: 0;
+        }
+        td {
+            padding: 0;
+        }
+        img {
+            border: 0;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 600px) {
+            .responsive-table {
+                width: 100% !important;
+                max-width: 600px !important; /* Ensure it doesn't exceed this on larger screens */
+            }
+            .responsive-img {
+                width: 100% !important;
+                height: auto !important;
+            }
+            .responsive-column {
+                display: block !important;
+                width: 100% !important;
+            }
+            .responsive-padding {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            .responsive-center {
+                text-align: center !important;
+            }
+             .responsive-button { /* Added for button styling in media query */
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+                padding: 10px 0 !important;
+            }
+        }
+
+        /* Button styles (added for consistency and mobile) */
+        .button {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #007bff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+        .button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        #confirmation-message {
+            color: green;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" class="responsive-table" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+        <tr>
+            <td align="center" style="padding: 20px;" class="responsive-padding">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Aurora_%26_sunset.jpg" alt="AuroraConn Logo" class="responsive-img" style="display: block; max-width: 100%; height: auto;">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 20px;" class="responsive-padding">
+                <h2 style="color: #333333; text-align: center;" class="responsive-center">Welcome to AuroraConn, Kousik!</h2>
+                <p style="color: #555555; text-align: center;" class="responsive-center">Thank you for signing up for AuroraConn! We're excited to have you join our community.</p>
+                <p style="color: #555555; text-align: center;" class="responsive-center">To get started, please confirm your email address by clicking the button below:</p>
+                <div id="confirmation-message" style="display: none;"></div> <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 20px 0; width: 100%;">
+                    <tr>
+                        <td bgcolor="#007bff" style="border-radius: 5px; text-align: center;" class="responsive-button">
+                            <a href="#" id="confirm-email-button" target="_blank" class="button">Confirm Your Email</a>
+                        </td>
+                    </tr>
+                </table>
+                <p style="color: #555555; text-align: center;" class="responsive-center">If you did not sign up for AuroraConn, please ignore this email.</p>
+                <hr style="border: 1px solid #dddddd; margin-top: 30px; margin-bottom: 20px;">
+                <p style="color: #777777; font-size: 0.8em; text-align: center;" class="responsive-center">Sincerely,<br>The AuroraConn Team</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding: 20px; background-color: #eeeeee; color: #777777; font-size: 0.8em;" class="responsive-padding responsive-center">
+                <p>AuroraConn | INDIA</p>
+                <p><a href="https://www.AuroraConnapp.com/privacy" style="color: #777777; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: #777777; text-decoration: none;">Terms of Service</a></p>
+            </td>
+        </tr>
+    </table>
+    <script>
+        const confirmEmailButton = document.getElementById('confirm-email-button');
+        const confirmationMessage = document.getElementById('confirmation-message');
+
+        if (confirmEmailButton) {
+            confirmEmailButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default link behavior (navigating to a new page)
+                confirmationMessage.textContent = 'Your email has been successfully verified!';
+                confirmationMessage.style.display = 'block'; // Show the message
+                // You could add more sophisticated logic here, like updating the page content
+                // or sending an AJAX request to your server.
+            });
+        }
+    </script>
+</body>
+</html>
